@@ -52,6 +52,12 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision> <!-- Colision -->
+            <origin xyz="0.39 0 0"/> 
+            <geometry>
+                <box size="0.78 0.6 0.04"/> 
+            </geometry>
+        </collision>
     </link>
 
                                                     <!-- RIGHT WHEEL LINK -->
@@ -70,6 +76,11 @@
             </geometry>
             <material name="orange"/>
         </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.04"/> 
+            </geometry>
+        </collision>
     </link>
 
                                                     <!-- LEFT WHEEL LINK -->
@@ -88,6 +99,11 @@
             </geometry>
             <material name="orange"/>
         </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.04"/> 
+            </geometry>
+        </collision>
     </link>
 
                                                     <!-- CASTER WHEEL LINKS -->
@@ -112,6 +128,12 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </collision>
     </link> 
 
             <!-- Caster wheel 2 -->
@@ -128,6 +150,12 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </collision>
     </link> 
 
         <!-- Caster wheel 3 -->
@@ -144,6 +172,12 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </collision>
     </link> 
 
         <!-- Caster wheel 4 -->
@@ -160,6 +194,12 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </collision>
     </link> 
 
 </robot>
