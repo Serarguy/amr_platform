@@ -3,31 +3,58 @@
 
     <xacro:include filename="robot_materials.xacro" />
 
-    <!-- BASE LINK -->
+                                                    <!-- BASE LINK -->
 
     <link name="base_link">
 
     </link>
 
-    <!-- CHASSIS LINK -->
+                                                    <!-- CHASSIS LINK -->
 
+    <!-- dimensiuni sasiu: 780x600mm 
+        dimensiune profil: 40x40mm
+        L profil: 700mm
+        l profil: 600mm
+        Distanta mijloc sasiu - centru roti: 43.5mm
+    -->
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
-        <origin xyz="-0.1 0 0"/>
+        <origin xyz="-0.39 0 0.0435"/>
     </joint>
     
     <link name="chassis">
-        <visual>
-            <origin xyz="0.39 0 0.075"/> 
+        <visual> <!-- Back Profile -->
+            <origin xyz="0.02 0 0"/> 
             <geometry>
-                <box size="0.78 0.6 0.15"/> 
+                <box size="0.04 0.6 0.04"/> 
             </geometry>
             <material name="white"/>
         </visual>
+        <visual> <!-- Front Profile -->
+            <origin xyz="0.76 0 0"/> 
+            <geometry>
+                <box size="0.04 0.6 0.04"/> 
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <visual> <!-- Right Profile -->
+            <origin xyz="0.39 0.28 0"/> 
+            <geometry>
+                <box size="0.7 0.04 0.04"/> 
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <visual> <!-- Left Profile -->
+            <origin xyz="0.39 -0.28 0"/> 
+            <geometry>
+                <box size="0.7 0.04 0.04"/> 
+            </geometry>
+            <material name="black"/>
+        </visual>
     </link>
 
-    <!-- RIGHT WHEEL LINK -->
+                                                    <!-- RIGHT WHEEL LINK -->
 
     <joint name="right_wheel_joint" type="continuous">
         <parent link="base_link"/>
@@ -39,13 +66,13 @@
     <link name="right_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.1" length="0.04"/> 
+                <cylinder radius="0.05" length="0.04"/> 
             </geometry>
             <material name="orange"/>
         </visual>
     </link>
 
-    <!-- LEFT WHEEL LINK -->
+                                                    <!-- LEFT WHEEL LINK -->
 
     <joint name="left_wheel_joint" type="continuous">
         <parent link="base_link"/>
@@ -57,13 +84,82 @@
     <link name="left_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.1" length="0.04"/> 
+                <cylinder radius="0.05" length="0.04"/> 
             </geometry>
             <material name="orange"/>
         </visual>
     </link>
 
+                                                    <!-- CASTER WHEEL LINKS -->
+    <!--
+        distanta centru roata - profil superior: 77.75mm 
+        distanta X si Y centru roata - margine profil: 94.75mm
+        distanta roti L: 590.50mm
+        distanta roti l: 410.50mm
+    -->
+
+        <!-- Caster wheel 1 -->
+    <joint name="caster_wheel_1_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="caster_wheel_1"/>
+        <origin xyz="0.09475 0.20525 -0.058875"/>
+    </joint>
+
+    <link name="caster_wheel_1">
+        <visual>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link> 
+
+            <!-- Caster wheel 2 -->
+    <joint name="caster_wheel_2_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="caster_wheel_2"/>
+        <origin xyz="0.09475 -0.20525 -0.058875"/>
+    </joint>
+
+    <link name="caster_wheel_2">
+        <visual>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link> 
+
+        <!-- Caster wheel 3 -->
+    <joint name="caster_wheel_3_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="caster_wheel_3"/>
+        <origin xyz="0.68525 0.20525 -0.058875"/>
+    </joint>
+
+    <link name="caster_wheel_3">
+        <visual>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link> 
+
+        <!-- Caster wheel 4 -->
+    <joint name="caster_wheel_4_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="caster_wheel_4"/>
+        <origin xyz="0.68525 -0.20525 -0.058875"/>
+    </joint>
+
+    <link name="caster_wheel_4">
+        <visual>
+            <geometry>
+                <sphere radius="0.03775"/> 
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link> 
 
 </robot>
-
-<!-- sasiu 600, roti ext 463 => 232.5-20 212.5 => 0.2125 -->
