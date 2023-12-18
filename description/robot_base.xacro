@@ -65,6 +65,10 @@
         </xacro:inertial_hollow_frame>
     </link>
 
+    <gazebo reference="chassis">
+        <material>Gazebo/White</material>
+    </gazebo>
+
                                                     <!-- RIGHT WHEEL LINK -->
 
     <joint name="right_wheel_joint" type="continuous">
@@ -92,6 +96,10 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
                                                     <!-- LEFT WHEEL LINK -->
 
     <joint name="left_wheel_joint" type="continuous">
@@ -118,6 +126,10 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Orange</material>
+    </gazebo>
 
                                                     <!-- CASTER WHEEL LINKS -->
     <!--
@@ -150,7 +162,13 @@
         <xacro:inertial_sphere mass="0.1" radius="0.03775">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
-    </link> 
+    </link>
+
+    <gazebo reference="caster_wheel_1">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
 
             <!-- Caster wheel 2 -->
     <joint name="caster_wheel_2_joint" type="fixed">
@@ -177,6 +195,12 @@
         </xacro:inertial_sphere>
     </link> 
 
+    <gazebo reference="caster_wheel_2">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
+
         <!-- Caster wheel 3 -->
     <joint name="caster_wheel_3_joint" type="fixed">
         <parent link="chassis"/>
@@ -202,6 +226,12 @@
         </xacro:inertial_sphere>
     </link> 
 
+    <gazebo reference="caster_wheel_3">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
+
         <!-- Caster wheel 4 -->
     <joint name="caster_wheel_4_joint" type="fixed">
         <parent link="chassis"/>
@@ -226,5 +256,11 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
     </link> 
+
+    <gazebo reference="caster_wheel_4">
+        <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
 
 </robot>
