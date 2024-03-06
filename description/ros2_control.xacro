@@ -26,7 +26,7 @@
 
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-            <parameters>/home/simulationvm/dev_ws/src/amr_platform/config/my_controllers.yaml</parameters>
+            <parameters>/home/cosmin-pc/dev_ws/src/amr_platform/config/my_controllers.yaml</parameters>
         </plugin>
     </gazebo>
 
