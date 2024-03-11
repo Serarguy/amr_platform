@@ -3,9 +3,17 @@
 
     <xacro:include filename="robot_base.xacro"/>
 
+
+<!-- CHOSE WHICH CONTROL METHOD YOU WANNA USE -->
+
     <!-- <xacro:include filename="gazebo_control.xacro" /> -->
 
     <xacro:include filename="ros2_control.xacro"/>
+
+
+
+<!-- COMPONENTS XACRO -->
+
 
     <xacro:include filename="lidar.xacro"/>
 
