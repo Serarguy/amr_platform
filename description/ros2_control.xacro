@@ -27,8 +27,8 @@
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
 
-            <!-- CHANGE THE PATH FOR EVERY MACHINE YOU USE -->
-            <parameters>/home/cosmin-pc/dev_ws/src/amr_platform/config/my_controllers.yaml</parameters>
+            <!-- sudo apt install ros-iron-xacro if still not working change to fixed path -->
+            <parameters>$(find amr_platform)/config/my_controllers.yaml</parameters>
 
         </plugin>
     </gazebo>
